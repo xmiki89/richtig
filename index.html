@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Oath Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Registration Overlay -->
+    <div id="registrationOverlay" class="registration-overlay">
+        <div class="registration-container">
+            <h1 class="registration-title">Black Oath</h1>
+            <p class="registration-subtitle">Registrierung erforderlich</p>
+            
+            <div id="registrationMessage"></div>
+            
+            <form id="registrationForm" class="registration-form">
+                <input type="text" id="regName" class="registration-input" placeholder="Name" required>
+                <input type="text" id="regNachname" class="registration-input" placeholder="Nachname" required>
+                <input type="text" id="regId" class="registration-input" placeholder="ID" required>
+                <input type="email" id="regEmail" class="registration-input" placeholder="Email" required>
+                <input type="password" id="regPassword" class="registration-input" placeholder="Passwort" required>
+                <button type="submit" class="registration-btn">Registrieren</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div id="dashboardContent" class="dashboard-content">
+        <header class="dashboard-header">
+            <div class="branding">
+                <div class="logo-container">
+                    <div class="logo-text">☠️</div>
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-name">Black Oath</h1>
+                    <span class="brand-initials">BO</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active">Dashboard</button>
+                <button class="nav-item">Verträge</button>
+                <button class="nav-item">Analytik</button>
+                <button class="nav-item">Mitglieder</button>
+                <button class="nav-item">Admin</button>
+                <button id="userLogoutBtn" class="nav-item logout-btn" style="display: none;">Logout</button>
+            </nav>
+        </header>
+
+        <main class="dashboard-main">
+            <div class="dashboard-grid">
+                <!-- Stats Cards -->
+                <section class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <h3>Gesamteinnahmen</h3>
+                            <p class="stat-value"></p>
+                            <span class="stat-change"></span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <h3>Aktive Benutzer</h3>
+                            <p class="stat-value"></p>
+                            <span class="stat-change"></span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <h3>Wachstumsrate</h3>
+                            <p class="stat-value"></p>
+                            <span class="stat-change"></span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <h3>Leistung</h3>
+                            <p class="stat-value"></p>
+                            <span class="stat-change"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chart Section -->
+                <section class="chart-section">
+                    <div class="chart-container">
+                        <h2>Umsatzübersicht</h2>
+                        <div class="chart-placeholder">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Activity Feed -->
+                <section class="activity-section">
+                    <div class="activity-card">
+                        <h2>Aktuelle Aktivität</h2>
+                        <div class="activity-list">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
